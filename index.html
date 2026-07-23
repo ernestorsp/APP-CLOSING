@@ -44,18 +44,19 @@
     allow="camera; clipboard-write"
   ></iframe>
   <script>
+    const showApp=()=>{
+      document.querySelector('iframe').classList.add('ready');
+      document.getElementById('splash').classList.add('hide');
+    };
+    document.querySelector('iframe').addEventListener('load',showApp);
     window.addEventListener('message',event=>{
       const fromGoogle=event.origin==='https://script.google.com'||event.origin.endsWith('.googleusercontent.com');
       if(!fromGoogle||!event.data)return;
       if(event.data.type==='aalx-closing-ready'){
-        document.querySelector('iframe').classList.add('ready');
-        document.getElementById('splash').classList.add('hide');
+        showApp();
       }
     });
-    setTimeout(()=>{
-      document.querySelector('iframe').classList.add('ready');
-      document.getElementById('splash').classList.add('hide');
-    },20000);
+    setTimeout(showApp,20000);
   </script>
   <noscript class="fallback">
     <a href="https://script.google.com/macros/s/AKfycbxzdA0Yn4Bb7cVUDl1Gpax_oiJJMbIRsd-1l30VqviIn0xyZmMjnNn1psmoxYN0Ia8/exec">Open AAlX Closing</a>
