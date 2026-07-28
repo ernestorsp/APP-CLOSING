@@ -1,4 +1,4 @@
-# AAlX Closing
+# AAXI Closing
 
 Mobile-first Google Apps Script web app for daily van closing operations.
 
@@ -16,7 +16,7 @@ Mobile-first Google Apps Script web app for daily van closing operations.
 - Inspection history and audit log
 - Daily rescue-driver tracking for DJX3 and DJX4
 - Closing checklist showing inspections and rescues
-- Branded AAlX Closing login, header, and app icon
+- Branded AAXI Closing login, header, and app icon
 
 ## Google Sheet
 
