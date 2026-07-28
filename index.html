@@ -39,27 +39,31 @@
     </div>
   </div>
   <iframe
-    src="https://script.google.com/macros/s/AKfycbxzdA0Yn4Bb7cVUDl1Gpax_oiJJMbIRsd-1l30VqviIn0xyZmMjnNn1psmoxYN0Ia8/exec"
+    src="https://script.google.com/macros/s/AKfycbyKb8yfayBOvCpVBTKQ3yfnTdfVmXsGSPefCrFoNIO-3nGJp1UxuvlZlvujBtJMfVk/exec"
     title="AAlX Closing"
     allow="camera; clipboard-write"
   ></iframe>
   <script>
-    const showApp=()=>{
-      document.querySelector('iframe').classList.add('ready');
-      document.getElementById('splash').classList.add('hide');
-    };
-    document.querySelector('iframe').addEventListener('load',showApp);
+    const TOKEN_KEY='aalx_closing_token';
     window.addEventListener('message',event=>{
       const fromGoogle=event.origin==='https://script.google.com'||event.origin.endsWith('.googleusercontent.com');
       if(!fromGoogle||!event.data)return;
       if(event.data.type==='aalx-closing-ready'){
-        showApp();
+        document.querySelector('iframe').classList.add('ready');
+        document.getElementById('splash').classList.add('hide');
+      }else if(event.data.type==='aalx-closing-token-request'){
+        event.source.postMessage({type:'aalx-closing-token-response',token:localStorage.getItem(TOKEN_KEY)||''},event.origin);
+      }else if(event.data.type==='aalx-closing-token-save'){
+        event.data.token?localStorage.setItem(TOKEN_KEY,event.data.token):localStorage.removeItem(TOKEN_KEY);
       }
     });
-    setTimeout(showApp,20000);
+    setTimeout(()=>{
+      document.querySelector('iframe').classList.add('ready');
+      document.getElementById('splash').classList.add('hide');
+    },20000);
   </script>
   <noscript class="fallback">
-    <a href="https://script.google.com/macros/s/AKfycbxzdA0Yn4Bb7cVUDl1Gpax_oiJJMbIRsd-1l30VqviIn0xyZmMjnNn1psmoxYN0Ia8/exec">Open AAlX Closing</a>
+    <a href="https://script.google.com/macros/s/AKfycbyKb8yfayBOvCpVBTKQ3yfnTdfVmXsGSPefCrFoNIO-3nGJp1UxuvlZlvujBtJMfVk/exec">Open AAlX Closing</a>
   </noscript>
 </body>
 </html>
