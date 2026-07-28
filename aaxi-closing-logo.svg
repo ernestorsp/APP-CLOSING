@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">AAXI Closing</title>
+  <desc id="desc">A white delivery van with a teal check mark above the words AAXI Closing.</desc>
+  <rect width="512" height="512" rx="96" fill="#082e52"/>
+  <circle cx="256" cy="196" r="143" fill="none" stroke="#2fb7c7" stroke-width="10"/>
+  <path fill="#fff" d="M155 134c5-25 18-39 42-42h118c24 3 37 17 42 42l23 108v77c0 13-8 21-21 21h-21v25h-47v-25h-70v25h-47v-25h-21c-13 0-21-8-21-21v-77l23-108Zm35 2-13 64h158l-13-64c-2-8-7-12-15-12H205c-8 0-13 4-15 12Zm-25 96c-9 0-16 7-16 16s7 16 16 16 16-7 16-16-7-16-16-16Zm182 0c-9 0-16 7-16 16s7 16 16 16 16-7 16-16-7-16-16-16Zm-151 68h120v-24H196v24Z"/>
+  <path d="m204 237 38 38 91-101" fill="none" stroke="#2fb7c7" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="256" y="425" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="92" font-weight="800" text-anchor="middle" letter-spacing="-3">AAXI</text>
+  <path d="M77 459h74m210 0h74" stroke="#2fb7c7" stroke-width="3"/>
+  <text x="256" y="470" fill="#2fb7c7" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="600" text-anchor="middle" letter-spacing="12">CLOSING</text>
+</svg>
