@@ -6,13 +6,13 @@
   <meta name="theme-color" content="#173f5f">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="apple-mobile-web-app-title" content="AAlX Closing">
-  <meta name="application-name" content="AAlX Closing">
-  <link rel="icon" type="image/svg+xml" sizes="512x512" href="aalx-closing-logo.svg">
-  <link rel="shortcut icon" href="aalx-closing-logo.svg">
-  <link rel="apple-touch-icon" href="aalx-closing-logo.svg">
+  <meta name="apple-mobile-web-app-title" content="AAXI Closing">
+  <meta name="application-name" content="AAXI Closing">
+  <link rel="icon" type="image/svg+xml" sizes="512x512" href="aaxi-closing-logo.svg">
+  <link rel="shortcut icon" href="aaxi-closing-logo.svg">
+  <link rel="apple-touch-icon" href="aaxi-closing-logo.svg">
   <link rel="manifest" href="manifest.webmanifest">
-  <title>AAlX Closing</title>
+  <title>AAXI Closing</title>
   <style>
     html,body{width:100%;height:100%;margin:0;overflow:hidden;background:#f4f7fa}
     iframe{display:block;width:100%;height:100%;border:0;background:#f4f7fa;opacity:0;transition:opacity .25s ease}
@@ -32,28 +32,28 @@
 <body>
   <div id="splash" class="splash" role="status" aria-live="polite">
     <div class="splashBox">
-      <img class="splashLogo" src="aalx-closing-logo.svg" alt="AAlX">
-      <h1>AAlX Closing</h1>
+      <img class="splashLogo" src="aaxi-closing-logo.svg" alt="AAXI">
+      <h1>AAXI Closing</h1>
       <p>Loading your workspace…</p>
       <div class="spinner" aria-hidden="true"></div>
     </div>
   </div>
   <iframe
-    src="https://script.google.com/macros/s/AKfycbxjd5CxNQDJaPloZvFqFOb5VyElBg3UMEXGpSPhpquPFUASoha8oSH3HX575GHgcBQ/exec"
-    title="AAlX Closing"
+    src="https://script.google.com/macros/s/AKfycbyKb8yfayBOvCpVBTKQ3yfnTdfVmXsGSPefCrFoNIO-3nGJp1UxuvlZlvujBtJMfVk/exec"
+    title="AAXI Closing"
     allow="camera; clipboard-write"
   ></iframe>
   <script>
-    const TOKEN_KEY='aalx_closing_token';
+    const TOKEN_KEY='aaxi_closing_token';
     window.addEventListener('message',event=>{
       const fromGoogle=event.origin==='https://script.google.com'||event.origin.endsWith('.googleusercontent.com');
       if(!fromGoogle||!event.data)return;
-      if(event.data.type==='aalx-closing-ready'){
+      if(event.data.type==='aaxi-closing-ready'){
         document.querySelector('iframe').classList.add('ready');
         document.getElementById('splash').classList.add('hide');
-      }else if(event.data.type==='aalx-closing-token-request'){
-        event.source.postMessage({type:'aalx-closing-token-response',token:localStorage.getItem(TOKEN_KEY)||''},event.origin);
-      }else if(event.data.type==='aalx-closing-token-save'){
+      }else if(event.data.type==='aaxi-closing-token-request'){
+        event.source.postMessage({type:'aaxi-closing-token-response',token:localStorage.getItem(TOKEN_KEY)||''},event.origin);
+      }else if(event.data.type==='aaxi-closing-token-save'){
         event.data.token?localStorage.setItem(TOKEN_KEY,event.data.token):localStorage.removeItem(TOKEN_KEY);
       }
     });
@@ -63,7 +63,7 @@
     },20000);
   </script>
   <noscript class="fallback">
-    <a href="https://script.google.com/macros/s/AKfycbxjd5CxNQDJaPloZvFqFOb5VyElBg3UMEXGpSPhpquPFUASoha8oSH3HX575GHgcBQ/exec">Open AAlX Closing</a>
+    <a href="https://script.google.com/macros/s/AKfycbyKb8yfayBOvCpVBTKQ3yfnTdfVmXsGSPefCrFoNIO-3nGJp1UxuvlZlvujBtJMfVk/exec">Open AAXI Closing</a>
   </noscript>
 </body>
 </html>
