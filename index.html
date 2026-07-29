@@ -39,12 +39,21 @@
     </div>
   </div>
   <iframe
-    src="https://script.google.com/macros/s/AKfycbx2hQeXkFL4_s0ICX5kjnegLPLLcVZELYlMAPyCKKivDPUd0IH5uiU2bcIhYHvgWtw/exec"
+    src="https://script.google.com/macros/s/AKfycbyKb8yfayBOvCpVBTKQ3yfnTdfVmXsGSPefCrFoNIO-3nGJp1UxuvlZlvujBtJMfVk/exec"
     title="AAXI Closing"
     allow="camera; clipboard-write"
   ></iframe>
   <script>
     const TOKEN_KEY='aaxi_closing_token';
+    const appFrame=document.querySelector('iframe');
+    function sendSavedToken(){
+      if(appFrame.contentWindow)appFrame.contentWindow.postMessage({type:'aaxi-closing-token-response',token:localStorage.getItem(TOKEN_KEY)||''},'*');
+    }
+    appFrame.addEventListener('load',()=>{
+      sendSavedToken();
+      setTimeout(sendSavedToken,300);
+      setTimeout(sendSavedToken,1000);
+    });
     window.addEventListener('message',event=>{
       const fromGoogle=event.origin==='https://script.google.com'||event.origin.endsWith('.googleusercontent.com');
       if(!fromGoogle||!event.data)return;
@@ -63,7 +72,7 @@
     },20000);
   </script>
   <noscript class="fallback">
-    <a href="https://script.google.com/macros/s/AKfycbx2hQeXkFL4_s0ICX5kjnegLPLLcVZELYlMAPyCKKivDPUd0IH5uiU2bcIhYHvgWtw/exec">Open AAXI Closing</a>
+    <a href="https://script.google.com/macros/s/AKfycbyKb8yfayBOvCpVBTKQ3yfnTdfVmXsGSPefCrFoNIO-3nGJp1UxuvlZlvujBtJMfVk/exec">Open AAXI Closing</a>
   </noscript>
 </body>
 </html>
