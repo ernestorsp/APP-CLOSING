@@ -39,13 +39,15 @@
     </div>
   </div>
   <iframe
-    src="https://script.google.com/macros/s/AKfycbxrIbhnprymQZM1y3bm_CD9dH7CDZmsJA0tjCT72dnFBhqLpP87FMsYXpRhvaeudoE/exec"
+    src="about:blank"
     title="AAXI Closing"
     allow="camera; clipboard-write"
   ></iframe>
   <script>
     const TOKEN_KEY='aaxi_closing_token';
+    const SCRIPT_URL='https://script.google.com/macros/s/AKfycbxrIbhnprymQZM1y3bm_CD9dH7CDZmsJA0tjCT72dnFBhqLpP87FMsYXpRhvaeudoE/exec';
     const appFrame=document.querySelector('iframe');
+    appFrame.src=SCRIPT_URL+(window.location.search||'');
     function sendSavedToken(){
       if(appFrame.contentWindow)appFrame.contentWindow.postMessage({type:'aaxi-closing-token-response',token:localStorage.getItem(TOKEN_KEY)||''},'*');
     }
